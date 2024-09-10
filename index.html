@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Together</title>
+
+    <!-- Include Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            height: 100%;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            /* Enables scroll snapping */
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+            scroll-snap-align: start;
+            /* Snaps each section to the top */
+        }
+
+        #title {
+            background-color: #4CAF50;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #title img {
+            width: 200px;
+            /* Adjust the width as necessary */
+            height: auto;
+            margin-bottom: 20px;
+            /* Space between logo and heading */
+        }
+
+        #work {
+            background-color: #f44336;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        #about {
+            background-color: #2196F3;
+        }
+
+        #contact {
+            background-color: #ff9800;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Contact section styling */
+        #contact .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        #contact .contact-info i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            color: white;
+        }
+
+        #contact .contact-info a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #contact .contact-info a:hover {
+            color: #000;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: white;
+            padding: 10px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 16px;
+            background-color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+
+        .carousel {
+            position: relative;
+            width: 80%;
+            height: 70%;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item iframe {
+            width: 80%;
+            height: 450px;
+            max-width: 100%;
+            border: none;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .carousel-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#title">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="title">
+        <img src="your-logo.png" alt="Your Logo">
+        <h1>Creative Together</h1>
+    </section>
+
+    <section id="work">
+        <h1>My Work</h1>
+        <div class="carousel">
+            <div class="carousel-container" id="carousel-container">
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="carousel-item">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button id="prev">&lt;</button>
+                <button id="next">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h1>About Me</h1>
+        <p>This is the about section where you can introduce yourself and your work.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Contact</h1>
+        <div class="contact-info">
+            <!-- Instagram Icon and Username -->
+            <a href="https://www.instagram.com/your-instagram" target="_blank">
+                <i class="fab fa-instagram"></i> @yourinstagram
+            </a>
+            <!-- Email Icon and Email Address -->
+            <a href="mailto:your-email@example.com">
+                <i class="fas fa-envelope"></i> your-email@example.com
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const carouselContainer = document.getElementById('carousel-container');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : 0;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            const totalItems = document.querySelectorAll('.carousel-item').length;
+            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : totalItems - 1;
+            updateCarousel();
+        });
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carouselContainer.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+
+</body>
+
+</html>
