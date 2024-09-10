@@ -46,9 +46,10 @@
         }
 
         #title img {
-            width: 1000px;
+            width: 50%;
             /* Adjust the width as necessary */
             height: auto;
+            display: block;
             margin-bottom: 0px;
             /* Space between logo and heading */
         }
@@ -60,8 +61,22 @@
             padding: 40px 20px;
         }
 
+        #work img {
+            max-width: 30%; /* Ensure it fits the container */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
         #about {
             background-color: white;
+        }
+
+        #about img {
+            max-width: 30%; /* Ensure it fits the container */
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
         #contact {
@@ -71,32 +86,46 @@
             padding: 40px 20px;
         }
 
+        #contact img {
+            max-width: 30%; /* Ensure it fits the container */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
         /* Contact section styling */
         #contact .contact-info {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             font-size: 1.5rem;
-            color: black;
+            color: #86A2FF;
+            padding: 20px;
         }
 
         #contact .contact-info i {
             font-size: 2.5rem;
             margin-right: 15px;
-            color: black;
+            color: #86A2FF;
+        }
+
+        #contact .contact-info img {
+            width: 40px; /* Adjust size of icons */
+            height: auto;
+            margin-right: 15px;
         }
 
         #contact .contact-info a {
             text-decoration: none;
-            color: black;
+            color: #86A2FF;
             font-size: 1.5rem;
             margin-bottom: 20px;
             display: flex;
-            align-items: center;
+            align-items: center; /* Vertically align the icon and text */
         }
 
         #contact .contact-info a:hover {
-            color: #000;
+            color: #86A2FF;
         }
 
         nav {
@@ -191,6 +220,60 @@
         .carousel-nav button:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
+        @media (max-width: 450px){
+
+    img {
+        /* display: inline-block; */
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+        /* margin-top: -100px; */
+        max-width: 100%;
+        /* height: auto; */
+      }
+
+      .navbar ul {
+        display: flex;
+        flex-direction: row;
+        /* align-items: center; */
+        /* justify-content: center; */
+        list-style-type: none;
+        background-color: hsl(0, 0%, 100%);
+        /* padding: 0px; */
+        /* margin: auto; */
+        border-radius: 20px;
+        /* width: 250px; */
+        overflow: hidden;
+        /* margin-top: 130px; */
+    }
+
+    .container {
+        /* max-width: 1200px */
+        /* margin-top: 10px; */
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* align-items: flex-start; */
+        /* gap: 20px; */
+    }
+
+    .contactContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-top: 10px;
+        font-size: x-large;
+    }
+
+    .container .main-video-container .main-video {
+        margin-bottom: 7px;
+        border-radius: 5px;
+        width: 100%;
+        
+    }
+
+}
     </style>
 </head>
 
@@ -210,7 +293,7 @@
     </section>
 
     <section id="work">
-        <h1>WORK</h1>
+        <img src="/images/WORK logo.png" alt="Your Work Image">
         <div class="carousel">
             <div class="carousel-container" id="carousel-container">
                 <div class="carousel-item">
@@ -237,21 +320,21 @@
     </section>
 
     <section id="about">
-        <h1>About Me</h1>
-        <p>This is the about section where you can introduce yourself and your work.</p>
+        <img src="/images/ABOUT logo.png" alt="Your Work Image">
+        <p></p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h1>Contact</h1>
+        <img src="/images/CONTACT logo.png" alt="Your Work Image">
         <div class="contact-info">
             <!-- Instagram Icon and Username -->
-            <a href="https://www.instagram.com/your-instagram" target="_blank">
-                <i class="fab fa-instagram"></i> @philipsgule
+            <a href="https://www.instagram.com/philipgule" target="_blank">
+                <img src="/icons/INSTAGRAM icon.png" alt="Instagram Icon"> @philipgule
             </a>
             <!-- Email Icon and Email Address -->
-            <a href="mailto:your-email@example.com">
-                <i class="fas fa-envelope"></i> philipsgule@gmailcom
+            <a href="mailto:philipsgule@gmail.com">
+                <img src="/icons/MAIL icon.png" alt="Email Icon"> philipsgule@gmail.com
             </a>
         </div>
     </section>
