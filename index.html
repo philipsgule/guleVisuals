@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
     <title>Creative Together</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@900&display=swap" rel="stylesheet">
@@ -19,9 +21,13 @@
             font-family: Arial, sans-serif;
             scroll-behavior: smooth;
             height: 100%;
-            overflow-y: scroll;
+            overflow-y: scroll, hidden;
             scroll-snap-type: y mandatory;
             /* Enables scroll snapping */
+        }
+
+        html::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
         }
 
         section {
@@ -165,115 +171,6 @@
             background-color: #ddd;
         }
 
-        .carousel {
-            position: relative;
-            width: 80%;
-            height: 70%;
-            margin: 0 auto;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .carousel-container {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .carousel-item iframe {
-            width: 65%;
-            height: 728px;
-            max-width: 100%;
-            border: none;
-            border-radius: 20px;
-        }
-
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 75%;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .carousel-nav button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 20px 30px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            border-radius: 20px;
-        }
-
-        .carousel-nav button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        @media (max-width: 450px){
-
-    img {
-        /* display: inline-block; */
-        /* margin-left: auto; */
-        /* margin-right: auto; */
-        /* margin-top: -100px; */
-        max-width: 100%;
-        /* height: auto; */
-      }
-
-      .navbar ul {
-        display: flex;
-        flex-direction: row;
-        /* align-items: center; */
-        /* justify-content: center; */
-        list-style-type: none;
-        background-color: hsl(0, 0%, 100%);
-        /* padding: 0px; */
-        /* margin: auto; */
-        border-radius: 20px;
-        /* width: 250px; */
-        overflow: hidden;
-        /* margin-top: 130px; */
-    }
-
-    .container {
-        /* max-width: 1200px */
-        /* margin-top: 10px; */
-        display: flex;
-        /* flex-wrap: wrap; */
-        /* align-items: flex-start; */
-        /* gap: 20px; */
-    }
-
-    .contactContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        margin-top: 10px;
-        font-size: x-large;
-    }
-
-    .container .main-video-container .main-video {
-        margin-bottom: 7px;
-        border-radius: 5px;
-        width: 100%;
-        
-    }
-
-}
     </style>
 </head>
 
@@ -294,29 +191,7 @@
 
     <section id="work">
         <img src="/images/WORK logo.png" alt="Your Work Image">
-        <div class="carousel">
-            <div class="carousel-container" id="carousel-container">
-                <div class="carousel-item">
-                    <iframe src="https://www.youtube.com/embed/TrBZvjM8dF0?si=3jy5Gzi8z0XcgRVj" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
-                    <iframe src="https://www.youtube.com/embed/zJkkEgmD3zg?si=oUDXqMikAr5fkv94" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="carousel-nav">
-                <button id="prev">&lt;</button>
-                <button id="next">&gt;</button>
-            </div>
-        </div>
+        
     </section>
 
     <section id="about">
@@ -338,29 +213,6 @@
             </a>
         </div>
     </section>
-
-    <script>
-        const carouselContainer = document.getElementById('carousel-container');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        let currentIndex = 0;
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : 0;
-            updateCarousel();
-        });
-
-        nextButton.addEventListener('click', () => {
-            const totalItems = document.querySelectorAll('.carousel-item').length;
-            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : totalItems - 1;
-            updateCarousel();
-        });
-
-        function updateCarousel() {
-            const offset = -currentIndex * 100;
-            carouselContainer.style.transform = `translateX(${offset}%)`;
-        }
-    </script>
 
 </body>
 
